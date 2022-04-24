@@ -28,6 +28,8 @@ services:
       SSL_MODE: "disable"
     ports:
       - 8080:8080
+    volumes:
+      - ./migrations:/app/migrations
     depends_on:
       - db
     networks:

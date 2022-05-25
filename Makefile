@@ -10,7 +10,7 @@ reset:
 	docker compose down -v
 
 apiup:
-	docker compsoe up api
+	docker compose up --build api
 
 dbshell:
 	docker compose exec db psql -U postgres

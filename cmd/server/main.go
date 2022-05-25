@@ -1,8 +1,10 @@
 package main
 
 import (
+	"context"
 	"fmt"
 
+	"github.com/by-sabbir/go-rest/internal/comment"
 	"github.com/by-sabbir/go-rest/internal/db"
 )
 
@@ -20,6 +22,10 @@ func Run() error {
 		return fmt.Errorf("migrations failed because of: %w", err)
 	}
 	fmt.Println("Successfully Connected to the DB!")
+
+	cmtService := comment.NewService(db)
+	cmt, _ := cmtService.GetComment(context.Background(), "DFFC3516-6C4A-4B81-81B7-8E6298A410A4")
+	fmt.Println(cmt)
 	return nil
 }
 

@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/sabbir/Documents/study/go/go-rest'
+docker compose up -d db
+make: Leaving directory `/Users/sabbir/Documents/study/go/go-rest'
+ 

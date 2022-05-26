@@ -2,18 +2,15 @@ package comment
 
 import (
 	"context"
-	"errors"
 	"fmt"
-)
-
-var (
-	ErrorFetchingComment = errors.New("could not find the comment")
-	ErrorNotImplemented  = errors.New("not implemented")
 )
 
 // Store - this interface defines all the methods to operate
 type Store interface {
 	GetComment(context.Context, string) (Comment, error)
+	PostComment(context.Context, Comment) (Comment, error)
+	DeleteComment(context.Context, string) error
+	UpdateComment(context.Context, string, Comment) (Comment, error)
 }
 
 // Comment - representation of a comment structure
@@ -42,16 +39,37 @@ func (s *Service) GetComment(ctx context.Context, id string) (Comment, error) {
 	cmt, err := s.Store.GetComment(ctx, id)
 
 	if err != nil {
-		fmt.Println(err)
-		return Comment{}, ErrorFetchingComment
+		return Comment{}, err
 	}
 	return cmt, nil
 }
 
-func (s *Service) UpdateComment(ctx context.Context, cmt Comment) error {
-	return ErrorNotImplemented
+func (s *Service) PostComment(ctx context.Context, cmt Comment) (Comment, error) {
+	fmt.Println("Posting Comment")
+	cmt, err := s.Store.PostComment(ctx, cmt)
+
+	if err != nil {
+		return Comment{}, err
+	}
+	return cmt, nil
 }
 
-func (s *Service) DeleteComment(ctx context.Context, id string) (Comment, error) {
-	return Comment{}, ErrorNotImplemented
+func (s *Service) DeleteComment(ctx context.Context, id string) error {
+	fmt.Println("Deleting comment")
+	err := s.Store.DeleteComment(ctx, id)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (s *Service) UpdateComment(
+	ctx context.Context, id string, cmt Comment,
+) (Comment, error) {
+	fmt.Println("Updating comment...")
+	cmt, err := s.Store.UpdateComment(ctx, id, cmt)
+	if err != nil {
+		return Comment{}, err
+	}
+	return cmt, nil
 }

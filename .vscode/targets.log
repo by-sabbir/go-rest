@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Thu May 26 11:14:45 2022
+# Make data base, printed on Sun May 29 10:58:31 2022
 
 # Variables
 
@@ -15,6 +15,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -39,23 +41,22 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
- 
-make: *** No rule to make target `all'.  Stop.
-
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-b60bff27-8c5e-46e9-938a-fd93834fd240.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-dd82d14b-539d-4b4a-be1f-2d3f63ff33b9.sock
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/sabbir/Documents/study/go/go-rest
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+PATH = /Users/sabbir/Documents/project/personal/qrious/env/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+VIRTUAL_ENV = /Users/sabbir/Documents/project/personal/qrious/env
 # environment
 GOPATH = /Users/sabbir/go
 # environment
@@ -85,6 +86,8 @@ HOME = /Users/sabbir
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
+VSCODE_CLI = 1
+# environment
 VSCODE_CODE_CACHE_PATH = /Users/sabbir/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = sabbir
@@ -98,24 +101,32 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
 # environment
-SHLVL = 1
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = sabbir
 # makefile
 .DEFAULT_GOAL := dbup
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:8B91028A-5C01-446A-8A9F-FC862D01B4A8
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -131,7 +142,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418
+TERM_PROGRAM_VERSION = 3.4.15
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.1499D279-E8C8-4E62-80BF-D06AC37D5BB1
+# environment
+LC_TERMINAL_VERSION = 3.4.15
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -139,7 +154,11 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
+ITERM_SESSION_ID = w0t0p0:8B91028A-5C01-446A-8A9F-FC862D01B4A8
+# environment
 HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -149,9 +168,13 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+P9K_TTY = old
 # automatic
 ^F = $(notdir $^)
 # default
@@ -161,9 +184,13 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 88684
+TERM = xterm-256color
+# environment
+_P9K_TTY = /dev/ttys000
+# environment
+VSCODE_PID = 3126
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=2/97=2%
+# Load=89/1024=9%, Rehash=0, Collisions=5/112=4%
 
 # Pattern-specific Variable Values
 
@@ -274,6 +301,8 @@ dbdown:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu May 26 11:14:45 2022
+# Finished Make data base on Sun May 29 10:58:31 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+

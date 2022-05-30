@@ -2,7 +2,6 @@ package http
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -12,21 +11,22 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type CommenService interface{}
-
 type Handler struct {
 	Router  *mux.Router
-	Service CommenService
+	Service CommentService
 	Server  *http.Server
 }
 
-func NewHandler(service CommenService) *Handler {
+func NewHandler(service CommentService) *Handler {
 	h := &Handler{
 		Service: service,
 	}
 
 	h.Router = mux.NewRouter()
 	h.mapRoutes()
+	h.Router.Use(JSONMiddlewire)
+	h.Router.Use(LogMiddlewire)
+	h.Router.Use(TimeoutMiddleware)
 
 	h.Server = &http.Server{
 		Addr:    "0.0.0.0:8080",
@@ -36,9 +36,10 @@ func NewHandler(service CommenService) *Handler {
 }
 
 func (h *Handler) mapRoutes() {
-	h.Router.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "hello world!\n")
-	})
+	h.Router.HandleFunc("/api/v1/comment", h.PostComment).Methods("POST")
+	h.Router.HandleFunc("/api/v1/comment/{id}", h.GetComment).Methods("GET")
+	h.Router.HandleFunc("/api/v1/comment/{id}", h.UpdateComment).Methods("PUT")
+	h.Router.HandleFunc("/api/v1/comment/{id}", h.DeleteComment).Methods("DELETE")
 }
 
 func (h *Handler) Serve() error {

@@ -31,7 +31,7 @@ func (d *DataBase) GetComment(ctx context.Context, uuid string) (comment.Comment
 		ctx,
 		`select id, body, slug, author
 		from comments
-		where id=$1`,
+		where id::text=$1`,
 		uuid,
 	)
 	err := row.Scan(&cmtRow.ID, &cmtRow.Body, &cmtRow.Slug, &cmtRow.Author)
@@ -64,14 +64,14 @@ func (d *DataBase) PostComment(ctx context.Context, cmt comment.Comment) (commen
 		return comment.Comment{}, fmt.Errorf("could not close the row, %+v", err)
 	}
 
-	return comment.Comment{}, nil
+	return convertComment(postRow), nil
 }
 
 func (d *DataBase) DeleteComment(ctx context.Context, uuid string) error {
 	row, err := d.Client.ExecContext(
 		ctx,
 		`delete from comments
-		where id=$1`,
+		where id::text=$1`,
 		uuid,
 	)
 	fmt.Println(row)
@@ -98,11 +98,11 @@ func (d *DataBase) UpdateComment(
 		where id=:id`,
 		cmtRow,
 	)
-	if err := row.Close(); err != nil {
-		return comment.Comment{}, fmt.Errorf("error updating row: %+v", err)
-	}
 	if err != nil {
-		return comment.Comment{}, fmt.Errorf("error deleting comment: %+v", err)
+		return comment.Comment{}, fmt.Errorf("error updating comment: %w", err)
+	}
+	if err := row.Close(); err != nil {
+		return comment.Comment{}, fmt.Errorf("error updating row: %w", err)
 	}
 	return convertComment(cmtRow), nil
 }

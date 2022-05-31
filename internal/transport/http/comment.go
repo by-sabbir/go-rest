@@ -20,22 +20,37 @@ type Details struct {
 	Message string
 }
 
+type PostCommentRequest struct {
+	Slug   string `json:"slug" validate:"required"`
+	Body   string `json:"body" validate:"required"`
+	Author string `json:"author" validate:"required"`
+}
+
+func convertRequest(c PostCommentRequest) comment.Comment {
+	return comment.Comment{
+		Slug:   c.Slug,
+		Body:   c.Body,
+		Author: c.Author,
+	}
+}
+
 func (h *Handler) PostComment(w http.ResponseWriter, r *http.Request) {
-	var cmt comment.Comment
+	var cmt PostCommentRequest
 	if err := json.NewDecoder(r.Body).Decode(&cmt); err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 
-	cmt, err := h.Service.PostComment(r.Context(), cmt)
-	log.Println("Got Comment: ", cmt)
+	requestedComment := convertRequest(cmt)
+	postedComment, err := h.Service.PostComment(r.Context(), requestedComment)
+	log.Println("Got Comment: ", postedComment)
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 
-	if err := json.NewEncoder(w).Encode(cmt); err != nil {
+	if err := json.NewEncoder(w).Encode(postedComment); err != nil {
 		panic(err)
 	}
 }

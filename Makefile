@@ -1,4 +1,4 @@
-.PHONY: dbup dbdown reset apiup dbshell
+.PHONY: dbup dbdown reset apiup dbshell test
 
 dbup:
 	docker compose up -d db
@@ -14,3 +14,6 @@ apiup:
 
 dbshell:
 	docker compose exec db psql -U postgres
+
+test:
+	docker compose up --build test

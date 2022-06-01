@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sun May 29 10:58:31 2022
+# Make data base, printed on Wed Jun  1 11:04:25 2022
 
 # Variables
 
@@ -36,8 +36,6 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
@@ -46,19 +44,13 @@ INFOPATH = /opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-dd82d14b-539d-4b4a-be1f-2d3f63ff33b9.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-2ba05c9a-0467-404a-93bb-ef6327f2e4fb.sock
 # environment
 VSCODE_CWD = /Users/sabbir/Documents/study/go/go-rest
 # environment
-GOPROXY = https://proxy.golang.org,direct
-# environment
-PATH = /Users/sabbir/Documents/project/personal/qrious/env/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-VIRTUAL_ENV = /Users/sabbir/Documents/project/personal/qrious/env
-# environment
-GOPATH = /Users/sabbir/go
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -80,7 +72,7 @@ ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 MANPATH = /opt/homebrew/share/man::
 # environment
-GOMODCACHE = /Users/sabbir/go/pkg/mod
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/sabbir
 # default
@@ -118,7 +110,7 @@ USER = sabbir
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:8B91028A-5C01-446A-8A9F-FC862D01B4A8
+TERM_SESSION_ID = w0t0p0:8269465B-1912-45FD-A7E0-6499C88B8F18
 # environment
 LESS = -R
 # automatic
@@ -144,7 +136,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.1499D279-E8C8-4E62-80BF-D06AC37D5BB1
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.274DB983-E1D1-4C17-9CAE-6F30010ECE8C
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # environment
@@ -154,7 +146,7 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:8B91028A-5C01-446A-8A9F-FC862D01B4A8
+ITERM_SESSION_ID = w0t0p0:8269465B-1912-45FD-A7E0-6499C88B8F18
 # environment
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
@@ -188,9 +180,9 @@ TERM = xterm-256color
 # environment
 _P9K_TTY = /dev/ttys000
 # environment
-VSCODE_PID = 3126
+VSCODE_PID = 44428
 # variable set hash-table stats:
-# Load=89/1024=9%, Rehash=0, Collisions=5/112=4%
+# Load=85/1024=8%, Rehash=0, Collisions=4/108=4%
 
 # Pattern-specific Variable Values
 
@@ -301,7 +293,7 @@ dbdown:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun May 29 10:58:31 2022
+# Finished Make data base on Wed Jun  1 11:04:25 2022
 
  
 make: *** No rule to make target `all'.  Stop.

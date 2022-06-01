@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Wed Jun  1 11:04:25 2022
+
+# Make data base, printed on Wed Jun  1 16:11:13 2022
 
 # Variables
 
@@ -36,6 +39,8 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
@@ -44,13 +49,17 @@ INFOPATH = /opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-2ba05c9a-0467-404a-93bb-ef6327f2e4fb.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-8185ad3d-92bb-43d1-ae1d-84f8de5d4b4f.sock
 # environment
 VSCODE_CWD = /Users/sabbir/Documents/study/go/go-rest
+# environment
+GOPROXY = https://proxy.golang.org,direct
 # environment
 PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+GOPATH = /Users/sabbir/go
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -72,7 +81,7 @@ ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 MANPATH = /opt/homebrew/share/man::
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+GOMODCACHE = /Users/sabbir/go/pkg/mod
 # environment
 HOME = /Users/sabbir
 # default
@@ -136,7 +145,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.274DB983-E1D1-4C17-9CAE-6F30010ECE8C
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.EA513CF5-6C2C-4AEE-AFE3-380D9EE06697
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # environment
@@ -182,7 +191,7 @@ _P9K_TTY = /dev/ttys000
 # environment
 VSCODE_PID = 44428
 # variable set hash-table stats:
-# Load=85/1024=8%, Rehash=0, Collisions=4/108=4%
+# Load=88/1024=9%, Rehash=0, Collisions=5/111=5%
 
 # Pattern-specific Variable Values
 
@@ -190,9 +199,9 @@ VSCODE_PID = 44428
 
 # Directories
 
-# . (device 16777230, inode 6605493): 16 files, no impossibilities.
+# . (device 16777230, inode 6605493): 18 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -209,7 +218,7 @@ all:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-.PHONY: dbup dbdown reset apiup dbshell
+.PHONY: dbup dbdown reset apiup dbshell test
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -232,11 +241,20 @@ dbshell:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:21:03
+#  Last modified 2022-06-01 11:39:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+test:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 19):
+	docker compose up --build test
+	
 
 # Not a target:
 .DEFAULT:
@@ -281,7 +299,7 @@ dbdown:
 	
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/27=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/29=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -293,8 +311,6 @@ dbdown:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  1 11:04:25 2022
+# Finished Make data base on Wed Jun  1 16:11:13 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

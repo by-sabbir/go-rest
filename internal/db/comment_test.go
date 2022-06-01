@@ -28,4 +28,15 @@ func TestCommentDB(t *testing.T) {
 	assert.Equal(t, "body", gotCmt.Body)
 	assert.Equal(t, "slug", gotCmt.Slug)
 	assert.Equal(t, "author", gotCmt.Author)
+
+	updatedComment, errUpdate := db.UpdateComment(context.Background(), gotCmt.ID, comment.Comment{
+		Body:   "updated",
+		Slug:   "updatedSlug",
+		Author: "updated author",
+	})
+	assert.NoError(t, errUpdate)
+	assert.Equal(t, gotCmt.ID, updatedComment.ID)
+	assert.NotEqual(t, gotCmt.Body, updatedComment.Body)
+	assert.Equal(t, updatedComment.Slug, "updatedSlug")
+
 }

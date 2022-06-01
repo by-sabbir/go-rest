@@ -4,28 +4,28 @@
 package db
 
 import (
-	// "context"
+	"context"
 	"testing"
 
-	// "github.com/by-sabbir/go-rest/internal/comment"
+	"github.com/by-sabbir/go-rest/internal/comment"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestCommentDB(t *testing.T) {
-	_, err := NewDatabase()
+	db, err := NewDatabase()
 
 	assert.NoError(t, err)
-	// cmt, err := db.PostComment(context.Background(), comment.Comment{
-	// 	Body:   "body",
-	// 	Slug:   "slug",
-	// 	Author: "author",
-	// })
+	cmt, err := db.PostComment(context.Background(), comment.Comment{
+		Body:   "body",
+		Slug:   "slug",
+		Author: "author",
+	})
 
-	// assert.NoError(t, err)
+	assert.NoError(t, err)
 
-	// gotCmt, err := db.GetComment(context.Background(), cmt.ID)
-	// assert.NoError(t, err)
-	// assert.Equal(t, "body", gotCmt.Body)
-	// assert.Equal(t, "slug", gotCmt.Slug)
-	// assert.Equal(t, "author", gotCmt.Author)
+	gotCmt, err := db.GetComment(context.Background(), cmt.ID)
+	assert.NoError(t, err)
+	assert.Equal(t, "body", gotCmt.Body)
+	assert.Equal(t, "slug", gotCmt.Slug)
+	assert.Equal(t, "author", gotCmt.Author)
 }

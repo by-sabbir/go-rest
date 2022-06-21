@@ -1,16 +1,13 @@
 # Security Policy
 
-## Supported Versions
+## Supported Go Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| >=1.16  | :white_check_mark: |
+| <1.16   | :x:                |
+
 
 ## Reporting a Vulnerability
 

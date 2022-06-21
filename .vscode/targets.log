@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Wed Jun  1 16:11:13 2022
+# Make data base, printed on Tue Jun 21 11:27:16 2022
 
 # Variables
 
@@ -22,6 +22,8 @@ make: *** No rule to make target `all'.  Stop.
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_LOG_NATIVE = false
+# environment
+NVM_INC = /Users/sabbir/.nvm/versions/node/v16.15.1/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -49,17 +51,19 @@ INFOPATH = /opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-8185ad3d-92bb-43d1-ae1d-84f8de5d4b4f.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/vscode-ipc-be10f058-9b5a-4558-8eb0-0eed6a690748.sock
 # environment
-VSCODE_CWD = /Users/sabbir/Documents/study/go/go-rest
+VSCODE_CWD = /Users/sabbir/temp/go-gallery
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+PATH = /Users/sabbir/.nvm/versions/node/v16.15.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/usr/local/go/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 GOPATH = /Users/sabbir/go
+# environment
+NVM_BIN = /Users/sabbir/.nvm/versions/node/v16.15.1/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -67,7 +71,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2zQNHmM70k/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZjxfYZ8gLQ/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -75,11 +79,12 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /Users/sabbir/Documents/study/go/go-rest
 # environment
+ 
 HOMEBREW_CELLAR = /opt/homebrew/Cellar
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-MANPATH = /opt/homebrew/share/man::
+MANPATH = /Users/sabbir/.nvm/versions/node/v16.15.1/share/man:/opt/homebrew/share/man::
 # environment
 GOMODCACHE = /Users/sabbir/go/pkg/mod
 # environment
@@ -89,11 +94,13 @@ MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/sabbir/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/sabbir/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = sabbir
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+NVM_CD_FLAGS = -q
 # environment
 ZSH = /Users/sabbir/.oh-my-zsh
 # environment
@@ -119,7 +126,7 @@ USER = sabbir
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:8269465B-1912-45FD-A7E0-6499C88B8F18
+TERM_SESSION_ID = w0t0p0:C0E919FC-D99F-482D-86DD-8FAAFE5FC74B
 # environment
 LESS = -R
 # automatic
@@ -135,7 +142,7 @@ TMPDIR = /var/folders/6s/1kc_cf4j04v59p7qp8_2hl380000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/sabbir/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/sabbir/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -145,7 +152,9 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.2774411.2774418.EA513CF5-6C2C-4AEE-AFE3-380D9EE06697
+NVM_DIR = /Users/sabbir/.nvm
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.10384559.10384565.97615894-8EA7-47FD-8EEF-A78A6FA174D5
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # environment
@@ -155,7 +164,7 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:8269465B-1912-45FD-A7E0-6499C88B8F18
+ITERM_SESSION_ID = w0t0p0:C0E919FC-D99F-482D-86DD-8FAAFE5FC74B
 # environment
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
@@ -180,6 +189,8 @@ P9K_TTY = old
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
 # environment
@@ -189,9 +200,9 @@ TERM = xterm-256color
 # environment
 _P9K_TTY = /dev/ttys000
 # environment
-VSCODE_PID = 44428
+VSCODE_PID = 2960
 # variable set hash-table stats:
-# Load=88/1024=9%, Rehash=0, Collisions=5/111=5%
+# Load=93/1024=9%, Rehash=0, Collisions=5/117=4%
 
 # Pattern-specific Variable Values
 
@@ -199,9 +210,9 @@ VSCODE_PID = 44428
 
 # Directories
 
-# . (device 16777230, inode 6605493): 18 files, no impossibilities.
+# . (device 16777229, inode 6605493): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -241,6 +252,7 @@ dbshell:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-06-01 11:39:18
 #  File has been updated.
 #  Successfully updated.
@@ -311,6 +323,6 @@ dbdown:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  1 16:11:13 2022
+# Finished Make data base on Tue Jun 21 11:27:16 2022
 
  
